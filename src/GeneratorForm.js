@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Form, Button, Container, Row, Col, Alert } from "react-bootstrap";
+import { GeneratorContext } from "./GeneratorContext";
 
 var obj = {
   templateName: "",
@@ -17,9 +18,10 @@ var obj = {
   zip: false,
 };
 
-const GeneratorForm = ({ setGenerator }) => {
+const GeneratorForm = () => {
   const [preferences, setPreferences] = useState(obj);
   const [alert, setAlert] = useState(false);
+  const { setGenerator } = useContext(GeneratorContext);
 
   const handleChange = (event) => {
     const name = event.target.name;

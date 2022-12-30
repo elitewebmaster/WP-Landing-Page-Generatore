@@ -1,6 +1,8 @@
+import { useContext } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import _ from "lodash";
+import { GeneratorContext } from "./GeneratorContext";
 
 export const exportPageTemplate = (generator) => {
   let arr = [];
@@ -47,7 +49,9 @@ export const exportPageTemplate = (generator) => {
           `;
 };
 
-const PageTemplate = ({ generator }) => {
+const PageTemplate = () => {
+  const { generator } = useContext(GeneratorContext);
+
   return (
     <section>
       <p>

@@ -1,6 +1,8 @@
+import { useContext } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import _ from "lodash";
+import { GeneratorContext } from "./GeneratorContext";
 
 export const exportAdminMenu = (generator) => {
   let columnsArr = [],
@@ -139,7 +141,8 @@ export const exportAdminMenu = (generator) => {
           `;
 };
 
-const AdminMenu = ({ generator }) => {
+const AdminMenu = () => {
+  const { generator } = useContext(GeneratorContext);
   return (
     <section>
       <ol>

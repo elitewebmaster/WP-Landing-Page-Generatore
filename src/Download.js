@@ -1,12 +1,16 @@
+import { useContext } from "react";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
 import { Button } from "react-bootstrap";
+import { GeneratorContext } from "./GeneratorContext";
 import { exportAdminMenu } from "./AdminMenu";
 import { exportAjax } from "./Ajax";
 import { exportFunctions } from "./Functions";
 import { exportPageTemplate } from "./PageTemplate";
 
-const Download = ({ generator }) => {
+const Download = () => {
+  const { generator } = useContext(GeneratorContext);
+
   const downloadTemplate = () => {
     const zip = new JSZip();
 
@@ -33,8 +37,8 @@ const Download = ({ generator }) => {
     <>
       <ol>
         <li>
-          Download template.zip and extract in the root of your template
-          directory.{" "}
+          Download template.zip and extract, then copy the files to your
+          template folder.{" "}
           <Button variant="primary" onClick={downloadTemplate}>
             Download template.zip
           </Button>
