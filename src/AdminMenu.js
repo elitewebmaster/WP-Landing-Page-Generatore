@@ -1,8 +1,5 @@
-import { useContext } from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import _ from "lodash";
-import { GeneratorContext } from "./GeneratorContext";
+import Syntax from "./Syntax";
 
 export const exportAdminMenu = (generator) => {
   let columnsArr = [],
@@ -142,7 +139,6 @@ export const exportAdminMenu = (generator) => {
 };
 
 const AdminMenu = () => {
-  const { generator } = useContext(GeneratorContext);
   return (
     <section>
       <ol>
@@ -155,13 +151,7 @@ const AdminMenu = () => {
         <li>Activate the plugin</li>
         <li>Go to Leads Tab in WordPress admin menu</li>
       </ol>
-      <SyntaxHighlighter
-        language="php"
-        style={a11yDark}
-        className="rounded-3 mb-5"
-      >
-        {exportAdminMenu(generator)};
-      </SyntaxHighlighter>
+      <Syntax page="admin" />
     </section>
   );
 };

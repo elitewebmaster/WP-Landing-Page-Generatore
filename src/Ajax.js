@@ -1,5 +1,4 @@
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import Syntax from "./Syntax";
 
 export const exportAjax = () => {
   return `
@@ -42,14 +41,7 @@ export const exportAjax = () => {
 const Ajax = () => {
   return (
     <section>
-      <p>Create a javascript file inside of your WP Theme named: ajax.js</p>
-      <SyntaxHighlighter
-        language="javascript"
-        style={a11yDark}
-        className="rounded-3 mb-5"
-      >
-        {exportAjax()}
-      </SyntaxHighlighter>
+      <Syntax page="ajax" />
     </section>
   );
 };

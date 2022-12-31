@@ -1,8 +1,5 @@
-import { useContext } from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import _ from "lodash";
-import { GeneratorContext } from "./GeneratorContext";
+import Syntax from "./Syntax";
 
 export const exportPageTemplate = (generator) => {
   let arr = [];
@@ -50,8 +47,6 @@ export const exportPageTemplate = (generator) => {
 };
 
 const PageTemplate = () => {
-  const { generator } = useContext(GeneratorContext);
-
   return (
     <section>
       <p>
@@ -59,13 +54,7 @@ const PageTemplate = () => {
         then copy & paste the code below to the file that you just created.
         Below form use Bootstrap CSS.
       </p>
-      <SyntaxHighlighter
-        language="php"
-        style={a11yDark}
-        className="rounded-3 mb-5"
-      >
-        {exportPageTemplate(generator)};
-      </SyntaxHighlighter>
+      <Syntax page="template" />
     </section>
   );
 };

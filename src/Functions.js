@@ -1,7 +1,4 @@
-import { useContext } from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { GeneratorContext } from "./GeneratorContext";
+import Syntax from "./Syntax";
 
 export const exportFunctions = (generator) => {
   let arr = [];
@@ -44,17 +41,10 @@ export const exportFunctions = (generator) => {
 };
 
 const Functions = () => {
-  const { generator } = useContext(GeneratorContext);
   return (
     <section>
       <p>Insert below code to your functions.php</p>
-      <SyntaxHighlighter
-        language="php"
-        style={a11yDark}
-        className="rounded-3 mb-5"
-      >
-        {exportFunctions(generator)};
-      </SyntaxHighlighter>
+      <Syntax page="functions" />
     </section>
   );
 };
