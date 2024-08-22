@@ -6,10 +6,6 @@ Count how much days left until the date that you choose.
 
 - [@elitewebmaster](https://elitewebmaster.com)
 
-## Demo
-
-https://landingpage.elitewebmaster.com
-
 ## Installation
 
 Open Terminal
